@@ -11,6 +11,7 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 
 /**
  * Created by LaunchCode
@@ -94,17 +95,24 @@ public class JobData {
 
         for (HashMap<String, String> row : allJobs) {
 
-            for (String cell : row.values()) {
-
-                if (cell.contains(value)) {
-                    jobs.add(row);
-                }
-
+            if(containsValue(row, value)) {
+                jobs.add(row);
             }
 
         }
 
         return jobs;
+    }
+
+    public static Boolean containsValue(HashMap<String, String> row, String value) {
+
+        for (String cell : row.values()) {
+
+            if (cell.contains(value)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     /**
