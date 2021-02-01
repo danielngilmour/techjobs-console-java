@@ -83,6 +83,10 @@ public class JobData {
             }
         }
 
+        if (jobs.size() < 1) {
+            System.out.println("No job results found.");
+        }
+
         return jobs;
     }
 
@@ -99,6 +103,10 @@ public class JobData {
                 jobs.add(row);
             }
 
+        }
+
+        if (jobs.size() < 1) {
+            System.out.println("No job results found.");
         }
 
         return jobs;
